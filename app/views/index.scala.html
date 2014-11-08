@@ -1,7 +1,11 @@
-@(message: String)
+@(registrationForm: Form[controllers.Application.Registration])
 
 @main("Welcome to Play") {
 
-    @play20.welcome(message)
-
+   @helper.form(routes.Application.register) {
+       @helper.inputText(registrationForm("fullName"))
+       @helper.inputText(registrationForm("email"))
+       @helper.inputPassword(registrationForm("password"))
+       <button type="submit" value="Register">name</button>
+   }
 }
